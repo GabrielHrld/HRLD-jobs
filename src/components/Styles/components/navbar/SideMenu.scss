@@ -1,0 +1,21 @@
+.sideMenu-wrapper {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: -110%;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.8s all ease-out;
+  &.active {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sideMenu-wrapper {
+    display: block;
+    .sideMenu-container {
+    }
+  }
+}
