@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SearchComponent from '../components/Search/SearchComponent';
 import Hero from '../components/Hero';
 import JobsBanner from '../components/JobsBanner';
+import Offers from '../components/Offers';
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
       <SearchComponent />
       <Hero />
       <JobsBanner />
-      <Hero />
+      <Offers />
     </HomeWrapper>
   );
 };

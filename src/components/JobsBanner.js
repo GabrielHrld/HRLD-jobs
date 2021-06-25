@@ -103,7 +103,7 @@ const JobsContainer = styled.div`
 const JobsCardsContainer = styled.div`
   height: 100%;
   display: grid;
-  grid-template-columns: 20% 75%;
+  grid-template-columns: 20% 78%;
   grid-gap: 1rem;
   justify-content: center;
 

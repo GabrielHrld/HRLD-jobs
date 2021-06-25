@@ -59,7 +59,9 @@ const SearchWrapper = styled.div`
   }
 `;
 
-const SearchContainer = styled.div``;
+const SearchContainer = styled.div`
+  padding: 0 calc((100vw - 1400px) / 2);
+`;
 
 const Form = styled.form`
   height: 58px;
