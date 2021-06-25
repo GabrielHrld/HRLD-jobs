@@ -50,7 +50,7 @@ const OffersWrapper = styled.div`
 
 const OffersContainer = styled.div`
   width: 85%;
-  padding: 3rem calc((100vw - 1400px) / 2) 0.8rem;
+  padding: 3rem calc((100vw - 1400px) / 2) 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -59,6 +59,8 @@ const OffersContainer = styled.div`
 `;
 
 const OffersCard = styled.div`
+  position: relative;
+  z-index: 1;
   min-width: 150px;
   width: 220px;
   min-height: 300px;

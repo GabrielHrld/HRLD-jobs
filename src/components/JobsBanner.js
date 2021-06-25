@@ -158,7 +158,7 @@ const JobCategory = styled.div`
   display: flex;
   align-items: center;
   margin: auto 0;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
   & div {
     display: flex;
     flex-direction: column;
