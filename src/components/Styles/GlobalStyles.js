@@ -13,6 +13,6 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
   body{
-    background-color: #edf1f7;
+    background-color: #dde0e4;
   }
 `;

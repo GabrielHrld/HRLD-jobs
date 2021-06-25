@@ -10,7 +10,7 @@ export const Button = styled(Link)`
   font-size: ${({ big }) => (big ? '20px' : '16px')};
   outline: none;
   border: 1px solid ${(primary) => (primary ? '#32b7b6' : '#425389')};
-  min-width: 100px;
+  min-width: 90px;
   cursor: pointer;
   text-decoration: none;
   transition: 0.3s !important;

@@ -60,7 +60,7 @@ const HeaderWrapper = styled.div`
   height: 80px;
   background-color: #fefefe;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 `;
 
 const HeaderContainer = styled.div`
@@ -134,6 +134,9 @@ const NavLink = styled(Link)`
   font-size: 1rem;
   letter-spacing: 1px;
   display: inline;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default Navbar;
