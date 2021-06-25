@@ -4,6 +4,7 @@ import SearchComponent from '../components/Search/SearchComponent';
 import Hero from '../components/Hero';
 import JobsBanner from '../components/JobsBanner';
 import Offers from '../components/Offers';
+import BenefitsBanner from '../components/BenefitsBanner';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero />
       <JobsBanner />
       <Offers />
+      <BenefitsBanner />
     </HomeWrapper>
   );
 };
