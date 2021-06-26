@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../Button';
 import SideMenu from './SideMenu';
@@ -8,48 +8,62 @@ import Logo from '../../../assets/logo.png';
 import '../Styles/components/navbar/Navbar.scss';
 
 const Navbar = () => {
+  const path = useLocation().pathname;
   const [openBurger, setOpenBurger] = useState(false);
-
   const handleOpenBurger = () => setOpenBurger(!openBurger);
 
+  useEffect(() => {}, [path]);
+  const validate = path == '/sign-in' || path == '/sign-up' ? true : false;
   return (
-    <HeaderWrapper>
+    <HeaderWrapper
+      style={
+        path == '/sign-in' || path == '/sign-up'
+          ? { backgroundColor: 'transparent' }
+          : {}
+      }
+    >
       <HeaderContainer>
         <LogoContainer>
-          <LogoAnchor to="/">
+          <LogoAnchor href="/">
             <Image src={Logo} alt="logo" />
-            <LogoText>Hrld jobs</LogoText>
+            {validate ? null : <LogoText>Hrld jobs</LogoText>}
           </LogoAnchor>
         </LogoContainer>
-        <NavWrapper>
-          <Nav>
-            <NavLinks>
-              <NavLinksItem>
-                <NavLink to="/">Contacto</NavLink>
-              </NavLinksItem>
-              <NavLinksItem>
-                <NavLink to="/">Ingresar</NavLink>
-              </NavLinksItem>
-              <NavLinksItem>
-                <Button round="true" to="/">
-                  Registrarse
-                </Button>
-              </NavLinksItem>
-            </NavLinks>
-          </Nav>
-        </NavWrapper>
-        <div className="burger-container" onClick={handleOpenBurger}>
-          <div
-            className={openBurger ? 'burger-line active' : 'burger-line'}
-          ></div>
-          <div
-            className={openBurger ? 'burger-line active' : 'burger-line'}
-          ></div>
-          <div
-            className={openBurger ? 'burger-line active' : 'burger-line'}
-          ></div>
-        </div>
-        <SideMenu state={openBurger} setState={setOpenBurger} />
+        {validate ? null : (
+          <NavWrapper>
+            <Nav>
+              <NavLinks>
+                <NavLinksItem>
+                  <NavLink to="/">Contacto</NavLink>
+                </NavLinksItem>
+                <NavLinksItem>
+                  <NavLink to="/sign-in">Ingresar</NavLink>
+                </NavLinksItem>
+                <NavLinksItem>
+                  <Button round="true" to="/sign-up">
+                    Registrarse
+                  </Button>
+                </NavLinksItem>
+              </NavLinks>
+            </Nav>
+          </NavWrapper>
+        )}
+        {validate ? null : (
+          <div className="burger-container" onClick={handleOpenBurger}>
+            <div
+              className={openBurger ? 'burger-line active' : 'burger-line'}
+            ></div>
+            <div
+              className={openBurger ? 'burger-line active' : 'burger-line'}
+            ></div>
+            <div
+              className={openBurger ? 'burger-line active' : 'burger-line'}
+            ></div>
+          </div>
+        )}
+        {validate ? null : (
+          <SideMenu state={openBurger} setState={setOpenBurger} />
+        )}
       </HeaderContainer>
     </HeaderWrapper>
   );
@@ -60,7 +74,10 @@ const HeaderWrapper = styled.div`
   height: 80px;
   background-color: #fefefe;
   position: fixed;
-  z-index: 3;
+  z-index: 6;
+  box-shadow: -1px 1px 8px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: -1px 1px 8px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -1px 1px 8px 0px rgba(0, 0, 0, 0.2);
 `;
 
 const HeaderContainer = styled.div`
@@ -78,7 +95,7 @@ const LogoContainer = styled.div`
   cursor: pointer;
 `;
 
-const LogoAnchor = styled(Link)`
+const LogoAnchor = styled.a`
   display: flex;
   align-items: center;
   width: 220px;

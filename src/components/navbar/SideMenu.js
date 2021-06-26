@@ -19,10 +19,10 @@ const SideMenu = ({ state, setState }) => {
             <SideMenu_Link to="/">Contacto</SideMenu_Link>
           </SideMenu_navItem>
           <SideMenu_navItem>
-            <SideMenu_Link to="/">Ingresar</SideMenu_Link>
+            <SideMenu_Link to="/sign-in">Ingresar</SideMenu_Link>
           </SideMenu_navItem>
           <SideMenu_navItem>
-            <Button to="/" big="true">
+            <Button to="/sign-up" big="true">
               Registrarse
             </Button>
           </SideMenu_navItem>

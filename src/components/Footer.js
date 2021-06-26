@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
+  const path = useLocation().pathname;
+  const validate = path != '/' ? true : false;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [path]);
+
   return (
-    <FooterWrapper>
-      <FooterContainer>
+    <FooterWrapper
+      style={
+        path == '/sign-in' || path == '/sign-up'
+          ? { background: '#fefefe' }
+          : {}
+      }
+    >
+      <FooterContainer
+        style={
+          validate ? { padding: '3rem calc((100vw - 1400px) / 2) 3rem' } : {}
+        }
+      >
         <GridContainer>
           <ColumnContainer>
             <Title>Institución</Title>
@@ -107,7 +124,7 @@ const Title = styled.h3`
   font-family: 'Haid Vadodara', sans-serif;
   font-weight: bold;
   font-size: clamp(0.8rem, 2vw, 1.6rem);
-  color: #26335a;
+  color: #2a2b2c;
   margin-bottom: 1rem;
 `;
 

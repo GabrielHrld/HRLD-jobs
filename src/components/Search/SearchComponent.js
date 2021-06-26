@@ -97,6 +97,7 @@ const LocationContainer = styled.div`
 `;
 
 const Select = styled.select`
+  background: transparent;
   border: none;
   outline: none;
   width: 100%;
