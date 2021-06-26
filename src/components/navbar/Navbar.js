@@ -18,7 +18,7 @@ const Navbar = () => {
     <HeaderWrapper
       style={
         path == '/sign-in' || path == '/sign-up'
-          ? { backgroundColor: 'transparent' }
+          ? { backgroundColor: 'transparent', boxShadow: 'none' }
           : {}
       }
     >

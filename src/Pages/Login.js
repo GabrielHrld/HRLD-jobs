@@ -78,7 +78,7 @@ const Card = styled.div`
   position: relative;
   z-index: 5;
   background: #fefefe;
-  border: 1px solid #2a2b2c;
+  border: 1px solid #d5d5d5;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
