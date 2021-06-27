@@ -101,7 +101,7 @@ const Footer = () => {
 
 const FooterWrapper = styled.div`
   width: 100%;
-  background: #32b792;
+  background: linear-gradient(90deg, #32b7b6, #32b791);
 `;
 
 const FooterContainer = styled.div`

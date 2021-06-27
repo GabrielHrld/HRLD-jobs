@@ -12,7 +12,9 @@ const SideMenu = ({ state, setState }) => {
   };
 
   return (
-    <div className={state ? 'sideMenu-wrapper active' : 'sideMenu-wrapper'}>
+    <div
+      className={state ? 'sideMenu-wrapper sideMenuActive' : 'sideMenu-wrapper'}
+    >
       <SideMenuContainer>
         <SideMenu_navLinks>
           <SideMenu_navItem>
