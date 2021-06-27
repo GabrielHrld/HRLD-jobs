@@ -40,14 +40,13 @@ const Login = () => {
 
 const LoginWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
-
+  min-height: 100vh;
   &::before {
     content: '';
     width: 100%;
-    height: 50%;
+    height: 85%;
     position: absolute;
-    bottom: 0%;
+    bottom: -12%;
     background: #fefefe;
     clip-path: polygon(
       0 100%,
@@ -68,6 +67,9 @@ const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    height: 100vh;
+  }
 `;
 
 const Card = styled.div`
@@ -86,6 +88,7 @@ const Card = styled.div`
   align-items: center;
   padding: 2rem 1.5rem;
   overflow: hidden;
+  transform: translateY(20%);
   @media screen and (max-width: 500px) {
     width: 100%;
     height: 100%;
@@ -93,6 +96,7 @@ const Card = styled.div`
     border-radius: 0;
     border: none;
     justify-content: space-evenly;
+    transform: translateY(0%);
   }
 `;
 

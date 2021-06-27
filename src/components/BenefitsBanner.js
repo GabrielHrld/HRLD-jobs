@@ -184,7 +184,7 @@ const InfoLink = styled(Link)`
 const Decoration = styled.div`
   position: absolute;
   z-index: 0;
-  top: -24%;
+  top: -20%;
   right: 0;
   width: 100%;
   height: 101px;
@@ -194,7 +194,7 @@ const Decoration = styled.div`
   } */
 
   @media screen and (max-width: 1360px) {
-    top: -16%;
+    top: -14.5%;
   }
 
   @media screen and (max-width: 534px) {
@@ -208,14 +208,14 @@ const Decoration = styled.div`
 
 const DecorationTwo = styled.div`
   position: absolute;
-  z-index: 0;
-  bottom: -17%;
+  z-index: 1;
+  bottom: -15%;
   right: 0;
   width: 100%;
   height: 70px;
 
   @media screen and (max-width: 1360px) {
-    bottom: -11%;
+    bottom: -10%;
   }
 
   @media screen and (max-width: 534px) {

@@ -24,7 +24,7 @@ export const Button = styled(Link)`
   }
 `;
 
-export const ButtonQuery = styled.button`
+export const ButtonQuery = styled(Link)`
   background: ${({ primary }) => (primary ? '#425389' : '#32b791')};
   white-space: nowrap;
   padding: ${({ big }) => (big ? '16px 40px' : '10px 32px')};

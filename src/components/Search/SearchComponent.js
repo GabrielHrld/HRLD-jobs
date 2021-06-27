@@ -39,7 +39,7 @@ const SearchComponent = () => {
               display: 'flex',
               justifyContent: 'flex-end',
             }}
-            type="submit"
+            to="/jobs"
           >
             Buscar
           </ButtonQuery>

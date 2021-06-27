@@ -1,18 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import JobOffers from '../components/Jobs/JobOffers';
 import SearchComponent from '../components/Search/SearchComponent';
 
-const Offers = () => {
+const Jobs = () => {
   return (
-    <OffersWrapper>
+    <JobsWrapper>
       <SearchComponent />
-    </OffersWrapper>
+      <JobOffers />
+    </JobsWrapper>
   );
 };
 
-const OffersWrapper = styled.div`
+const JobsWrapper = styled.div`
   position: relative;
   top: 80px;
 `;
 
-export default Offers;
+export default Jobs;
