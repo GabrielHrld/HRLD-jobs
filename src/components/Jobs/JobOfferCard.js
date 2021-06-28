@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const JobOfferCard = ({ key, title, subtitle, description, time, image }) => {
+const JobOfferCard = ({ title, subtitle, description, time, image }) => {
   return (
-    <CardWrapper key={key}>
+    <CardWrapper>
       <CardContainer>
         <ContentContainer>
           <Title to="/jobs">{title}</Title>
           <Subtitle>{subtitle}</Subtitle>
-          <Description>{description}</Description>
+          <Description>{`${description.slice(0, 150)}...`}</Description>
           <Time>{time}</Time>
         </ContentContainer>
         <ImageContainer>
@@ -24,7 +24,8 @@ const CardWrapper = styled.div`
   width: 100%;
   padding: 1rem 1.5rem;
   background: #fefefe;
-  border: #d5d5d5;
+  border: 1px solid #bfbfbf;
+  border-radius: 10px;
   transition: 0.2s all ease;
   margin-bottom: 1.4rem;
   &:hover {

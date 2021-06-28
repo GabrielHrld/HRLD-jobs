@@ -4,15 +4,14 @@ import Navbar from '../../components/Profile/Navbar/Navbar';
 import CardsContainer from '../../components/Profile/Cards/CardsContainer';
 import Card from '../../components/Profile/Cards/Card';
 import PrincipalCard from '../../components/Profile/Cards/PrincipalCard';
+import PageTitle from '../../components/PageTitle';
 
 const Profile = () => {
   return (
     <ProfileWrapper>
       <ProfileContainer>
         <BoxContainer>
-          <PrincipalTitleContainer>
-            <PrincipalTitle>Mi CV</PrincipalTitle>
-          </PrincipalTitleContainer>
+          <PageTitle title={'Mi CV'} />
           <ContentContainer>
             <Navbar />
             <CardsContainer>
