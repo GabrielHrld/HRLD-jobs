@@ -17,7 +17,10 @@ const SideMenu = ({ state, setState }) => {
     >
       <SideMenuContainer>
         <SideMenu_navLinks>
-          <SideMenu_navItem>
+          <SideMenu_navItem onClick={handleChange}>
+            <SideMenu_Link to="/jobs">Empleos</SideMenu_Link>
+          </SideMenu_navItem>
+          <SideMenu_navItem onClick={handleChange}>
             <SideMenu_Link to="/">Contacto</SideMenu_Link>
           </SideMenu_navItem>
           <SideMenu_navItem>

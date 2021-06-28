@@ -10,7 +10,10 @@ import '../Styles/components/navbar/Navbar.scss';
 const Navbar = () => {
   const path = useLocation().pathname;
   const [openBurger, setOpenBurger] = useState(false);
-  const handleOpenBurger = () => setOpenBurger(!openBurger);
+  const handleOpenBurger = () => {
+    console.log(1);
+    setOpenBurger(!openBurger);
+  };
 
   useEffect(() => {}, [path]);
   const validate = path == '/sign-in' || path == '/sign-up' ? true : false;
@@ -34,7 +37,10 @@ const Navbar = () => {
             <Nav>
               <NavLinks>
                 <NavLinksItem>
-                  <NavLink to="/">Contacto</NavLink>
+                  <NavLink to="/jobs">Empleos</NavLink>
+                </NavLinksItem>
+                <NavLinksItem>
+                  <NavLink to="/ ">Contacto</NavLink>
                 </NavLinksItem>
                 <NavLinksItem>
                   <NavLink to="/sign-in">Ingresar</NavLink>

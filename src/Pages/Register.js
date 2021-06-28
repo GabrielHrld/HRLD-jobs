@@ -60,7 +60,8 @@ const RegisterWrapper = styled.div`
     height: 85%;
 
     position: absolute;
-    bottom: -12%;
+    bottom: -15.5%;
+
     background: #fefefe;
     clip-path: polygon(
       0 100%,

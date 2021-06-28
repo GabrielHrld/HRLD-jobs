@@ -1,0 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;600&display=swap);
+.sideMenu-wrapper{display:none;position:fixed;top:80px;left:-110%;z-index:1;width:100vw;height:100vh;transition:.8s all ease-out}.sideMenu-wrapper.sideMenuActive{left:0}@media screen and (max-width: 768px){.sideMenu-wrapper{display:block}}
+.burger-container{width:1.5rem;height:1.5rem;margin-right:20px;display:none;flex-flow:column nowrap;justify-content:space-around;cursor:pointer}.burger-container .burger-line{width:100%;height:.1rem;border-radius:20px;background-color:#2a2b2c;transform-origin:1px;transition:.3s all ease-out}.burger-container .burger-line:nth-child(1).active{transform:rotate(45deg)}.burger-container .burger-line:nth-child(2){transform-origin:50%}.burger-container .burger-line:nth-child(2).active{transform:rotate(45deg);opacity:0}.burger-container .burger-line:nth-child(3).active{transform:rotate(-45deg)}@media screen and (max-width: 768px){.burger-container{display:flex}}
+.active li{background:#32b7b6}
+h1{font-size:50px;color:blue}

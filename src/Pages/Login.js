@@ -22,7 +22,7 @@ const Login = () => {
           </Form>
           <Button
             round="true"
-            style={{ textAlign: 'center', width: '60%' }}
+            style={{ textAlign: 'center', width: '60%', marginBottom: '1rem' }}
             to="/sign-in"
           >
             Ingresar
@@ -46,7 +46,7 @@ const LoginWrapper = styled.div`
     width: 100%;
     height: 85%;
     position: absolute;
-    bottom: -12%;
+    bottom: -15.5%;
     background: #fefefe;
     clip-path: polygon(
       0 100%,
