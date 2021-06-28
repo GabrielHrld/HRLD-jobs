@@ -22,29 +22,29 @@ const FilterSideMenu = ({ state, setState }) => {
         <Content>
           <SideMenuFilterBox title="Modalidad">
             <Container>
-              <Subtitle>Presencial</Subtitle>
+              <Subtitle to="/">Presencial</Subtitle>
             </Container>
             <Container>
-              <Subtitle>Mixto</Subtitle>
+              <Subtitle to="/">Mixto</Subtitle>
             </Container>
             <Container>
-              <Subtitle>Remoto</Subtitle>
+              <Subtitle to="/">Remoto</Subtitle>
             </Container>
           </SideMenuFilterBox>
         </Content>
         <Content>
           <SideMenuFilterBox title="Nivel laboral">
             <Container>
-              <Subtitle>Trainee</Subtitle>
+              <Subtitle to="/">Trainee</Subtitle>
             </Container>
             <Container>
-              <Subtitle>Junior</Subtitle>
+              <Subtitle to="/">Junior</Subtitle>
             </Container>
             <Container>
-              <Subtitle>Semi Senior</Subtitle>
+              <Subtitle to="/">Semi Senior</Subtitle>
             </Container>
             <Container>
-              <Subtitle>Senior</Subtitle>
+              <Subtitle to="/">Senior</Subtitle>
             </Container>
           </SideMenuFilterBox>
         </Content>
@@ -53,7 +53,7 @@ const FilterSideMenu = ({ state, setState }) => {
             {States.map((state, index) => {
               return (
                 <Container key={state}>
-                  <Subtitle>{state}</Subtitle>
+                  <Subtitle to="/">{state}</Subtitle>
                 </Container>
               );
             })}
@@ -65,7 +65,7 @@ const FilterSideMenu = ({ state, setState }) => {
             {Positions.map((position, index) => {
               return (
                 <Container key={position}>
-                  <Subtitle>{position}</Subtitle>
+                  <Subtitle to="/">{position}</Subtitle>
                 </Container>
               );
             })}
@@ -75,13 +75,13 @@ const FilterSideMenu = ({ state, setState }) => {
         <Content>
           <SideMenuFilterBox title="Tipo de puesto">
             <Container>
-              <Subtitle>Full Time</Subtitle>
+              <Subtitle to="/">Full Time</Subtitle>
             </Container>
             <Container>
-              <Subtitle>Part Time</Subtitle>
+              <Subtitle to="/">Part Time</Subtitle>
             </Container>
             <Container>
-              <Subtitle>Por hora</Subtitle>
+              <Subtitle to="/">Por hora</Subtitle>
             </Container>
           </SideMenuFilterBox>
         </Content>

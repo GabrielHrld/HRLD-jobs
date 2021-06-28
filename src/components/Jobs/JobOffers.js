@@ -4,13 +4,58 @@ import JobOfferCard from './JobOfferCard';
 import { jobs } from '../../utils/Jobs';
 import FilterBox from './FilterBox';
 import FilterSideMenu from './FilterSideMenu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Link } from 'react-router-dom';
 import { States } from '../../utils/States';
 import { Positions } from '../../utils/Positions';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const JobOffers = () => {
   const [sideMenu, setSideMenu] = useState(false);
+
+  //paginación
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+
+  //límite de páginas
+  const [pageNumberLimit, setPageNumberLimit] = useState(5);
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
+  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
+
+  const pages = [];
+  for (let i = 1; i <= Math.ceil(jobs.length / itemsPerPage); i++) {
+    pages.push(i);
+  }
+
+  //función para cambiar la página
+  const handleChangePage = (e) => setCurrentPage(Number(e.target.id));
+
+  //función para ir una página adelante
+  const handleNextPage = () => {
+    if (currentPage == pages.length) return null;
+    setCurrentPage(currentPage + 1);
+
+    if (currentPage + 1 > maxPageNumberLimit) {
+      setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
+      setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+    }
+  };
+
+  //función para ir una página atrás
+  const handlePrevPage = () => {
+    if (currentPage == pages[0]) return null;
+    setCurrentPage(currentPage - 1);
+
+    if ((currentPage - 1) % pageNumberLimit == 0) {
+      setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
+      setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+    }
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage; // 3 * 10 = index 30
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = jobs.slice(indexOfFirstItem, indexOfLastItem);
 
   const handleSideMenu = () => {
     setSideMenu(!sideMenu);
@@ -85,7 +130,7 @@ const JobOffers = () => {
           </FilterBox>
         </FiltersWrapper>
         <CardWrapper>
-          {jobs.map((job, index) => {
+          {currentItems.map((job, index) => {
             return (
               <JobOfferCard
                 key={job.id}
@@ -97,7 +142,34 @@ const JobOffers = () => {
               />
             );
           })}
-          <h3>prueba</h3>
+
+          <PaginationContainer>
+            <PaginationLi onClick={handlePrevPage}>
+              <FontAwesomeIcon icon={faArrowLeft} />
+            </PaginationLi>
+            {pages.map((number) => {
+              if (
+                number < maxPageNumberLimit + 1 &&
+                number > minPageNumberLimit
+              ) {
+                return (
+                  <PaginationLi
+                    key={number}
+                    id={number}
+                    active={currentPage == number ? 'true' : ''}
+                    onClick={handleChangePage}
+                  >
+                    {number}
+                  </PaginationLi>
+                );
+              } else {
+                return null;
+              }
+            })}
+            <PaginationLi onClick={handleNextPage}>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </PaginationLi>
+          </PaginationContainer>
         </CardWrapper>
       </JobOffersContainer>
     </JobOffersWrapper>
@@ -165,4 +237,27 @@ const CardWrapper = styled.div`
   }
 `;
 
+const PaginationContainer = styled.ul`
+  display: flex;
+`;
+
+const PaginationLi = styled.li`
+  font-family: 'Hind Vadodara', sans-serif;
+  font-weight: bold;
+  color: ${({ active }) => (active ? '#fefefe' : '#2a2b2c')};
+  background: ${({ active }) => (active ? '#32b7b6' : 'none')};
+  padding: 0.3rem 0.8rem;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-right: 4px;
+  transition: 0.2s all ease;
+  & svg {
+    color: #32b7b6;
+  }
+  &:hover {
+    background: #fefefe;
+    color: #2a2b2c;
+    text-decoration: underline;
+  }
+`;
 export default JobOffers;
