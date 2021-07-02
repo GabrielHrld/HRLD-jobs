@@ -18,7 +18,7 @@ const Navbar = () => {
   window.addEventListener('scroll', () => setScrollY(window.scrollY));
 
   useEffect(() => {
-    if (scrollY >= 80) {
+    if (scrollY >= 170) {
       setPosition(true);
     } else {
       setPosition(false);
@@ -29,7 +29,7 @@ const Navbar = () => {
     <NavbarWrapper
       style={
         position
-          ? { position: 'fixed', top: '90px', width: 'auto' }
+          ? { position: 'fixed', top: '17px', width: 'auto' }
           : { position: 'absolute' }
       }
     >

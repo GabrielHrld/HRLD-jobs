@@ -17,11 +17,14 @@ const Navbar = () => {
 
   useEffect(() => {}, [path]);
   const validate = path == '/sign-in' || path == '/sign-up' ? true : false;
+
   return (
     <HeaderWrapper
       style={
         path == '/sign-in' || path == '/sign-up'
           ? { backgroundColor: 'transparent', boxShadow: 'none' }
+          : path != '/'
+          ? { position: 'initial' }
           : {}
       }
     >

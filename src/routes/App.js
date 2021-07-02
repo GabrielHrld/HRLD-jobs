@@ -9,6 +9,7 @@ import Jobs from '../Pages/Jobs';
 import Register from '../Pages/Register';
 
 import '../styles/app.scss';
+import JobsDetails from '../Pages/JobsDetails';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route exact path="/sign-up" component={Register} />
           <Route exact path="/candidatos/profile" component={Profile} />
           <Route exact path="/jobs" component={Jobs} />
+          <Route exact path="/jobs/details/:id" component={JobsDetails} />
         </Switch>
       </Layout>
     </Router>
