@@ -9,7 +9,7 @@ export const Button = styled(Link)`
   font-family: 'Hind Vadodara', sans-serif;
   font-size: ${({ big }) => (big ? '20px' : '16px')};
   outline: none;
-  border: 1px solid ${(primary) => (primary ? '#32b7b6' : '#425389')};
+  border: 1px solid ${({ primary }) => (primary ? '#425389' : '#32b7b6')};
   min-width: 90px;
   cursor: pointer;
   text-decoration: none;
@@ -18,13 +18,11 @@ export const Button = styled(Link)`
 
   &:hover {
     background: ${({ primary }) => (primary ? '#32b7b6' : '#425389')};
-    border: 1px solid ${(primary) => (primary ? '#425389' : '#32b7b6')};
-
-    transform: translateY(-2px);
+    border: 1px solid ${({ primary }) => (primary ? '#32b7b6' : '#425389')};
   }
 `;
 
-export const ButtonQuery = styled(Link)`
+export const ButtonQuery = styled.button`
   background: ${({ primary }) => (primary ? '#425389' : '#32b791')};
   white-space: nowrap;
   padding: ${({ big }) => (big ? '16px 40px' : '10px 32px')};
@@ -32,7 +30,7 @@ export const ButtonQuery = styled(Link)`
   font-family: 'Hind Vadodara', sans-serif;
   font-size: ${({ big }) => (big ? '20px' : '16px')};
   outline: none;
-  border: 1px solid ${(primary) => (primary ? '#425389' : '#32b791')};
+  border: 1px solid ${({ primary }) => (primary ? '#425389' : '#32b791')};
   min-width: 100px;
   cursor: pointer;
   text-decoration: none;
@@ -40,6 +38,6 @@ export const ButtonQuery = styled(Link)`
   border-radius: ${({ round }) => (round ? '60px' : 'none')};
   &:hover {
     background: ${({ primary }) => (primary ? '#32b791' : '#425389')};
-    border: 1px solid ${(primary) => (primary ? '#32b791' : '#425389')};
+    border: 1px solid ${({ primary }) => (primary ? '#32b791' : '#425389')};
   }
 `;

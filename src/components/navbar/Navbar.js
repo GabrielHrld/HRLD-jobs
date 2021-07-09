@@ -11,7 +11,6 @@ const Navbar = () => {
   const path = useLocation().pathname;
   const [openBurger, setOpenBurger] = useState(false);
   const handleOpenBurger = () => {
-    console.log(1);
     setOpenBurger(!openBurger);
   };
 
