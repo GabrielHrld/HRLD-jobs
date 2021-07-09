@@ -20,7 +20,7 @@ const Home = () => {
 
 const HomeWrapper = styled.div`
   position: relative;
-  top: 80px;
+  padding-top: 80px;
 `;
 
 export default Home;

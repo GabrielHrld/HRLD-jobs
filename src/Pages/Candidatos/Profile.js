@@ -104,7 +104,6 @@ const Profile = () => {
 
 const ProfileWrapper = styled.div`
   width: 100%;
-  padding-bottom: 80px;
 `;
 
 const ProfileContainer = styled.div`

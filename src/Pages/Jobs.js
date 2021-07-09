@@ -18,7 +18,6 @@ const Jobs = () => {
 
 const JobsWrapper = styled.div`
   position: relative;
-  top: 80px;
 `;
 
 const TitleContainer = styled.div`
