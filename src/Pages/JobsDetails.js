@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import BreadCrumbNav from '../components/BreadCrumbNav';
 
 import { ButtonQuery } from '../components/Button';
 
@@ -7,6 +8,7 @@ const JobsDetails = () => {
   return (
     <JobsDetailsWrapper>
       <JobsDetailsContainer>
+        <BreadCrumbNav />
         <BoxesContainer>
           <OfferContainer>
             <OfferHeader>
@@ -61,7 +63,12 @@ const JobsDetails = () => {
               </ButtonQuery>
             </ButtonContainer>
           </OfferContainer>
-          <RelatedContainer>related container</RelatedContainer>
+          {/* Próximamente vamos a poner las publicaciones relacionadas */}
+          <RelatedContainer>
+            <ImageContainer>
+              <Image src="https://i.imgur.com/SDEjOso.jpg" />
+            </ImageContainer>
+          </RelatedContainer>
         </BoxesContainer>
       </JobsDetailsContainer>
     </JobsDetailsWrapper>
@@ -71,6 +78,7 @@ const JobsDetails = () => {
 const JobsDetailsWrapper = styled.div`
   width: 100%;
   min-height: calc(100vh - 80px);
+  padding-bottom: 2rem;
 `;
 
 const JobsDetailsContainer = styled.div`
@@ -90,6 +98,16 @@ const OfferContainer = styled.div`
   border: 1px solid #32b7b6;
   border-radius: 5px;
   background: #fefefe;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (max-width: 779px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const OfferHeader = styled.header`
@@ -155,7 +173,17 @@ const RelatedContainer = styled.div`
   margin: 0 0.5rem;
   min-width: 280px;
   width: auto;
-  background: blue;
+  @media screen and (max-width: 846px) {
+    display: none;
+  }
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+`;
+
+const Image = styled.img`
+  width: 100%;
 `;
 
 export default JobsDetails;

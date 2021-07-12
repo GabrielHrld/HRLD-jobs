@@ -45,7 +45,7 @@ const ImageContainer = styled.div`
   width: 16%;
   border-radius: 50%;
   position: absolute;
-  top: -30%;
+  top: -17%;
 `;
 
 const Image = styled.img`

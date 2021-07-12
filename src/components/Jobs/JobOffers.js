@@ -29,11 +29,15 @@ const JobOffers = () => {
   }
 
   //función para cambiar la página
-  const handleChangePage = (e) => setCurrentPage(Number(e.target.id));
+  const handleChangePage = (e) => {
+    window.scrollTo(0, 0);
+    setCurrentPage(Number(e.target.id));
+  };
 
   //función para ir una página adelante
   const handleNextPage = () => {
     if (currentPage == pages.length) return null;
+    window.scrollTo(0, 0);
     setCurrentPage(currentPage + 1);
 
     if (currentPage + 1 > maxPageNumberLimit) {
@@ -45,6 +49,7 @@ const JobOffers = () => {
   //función para ir una página atrás
   const handlePrevPage = () => {
     if (currentPage == pages[0]) return null;
+    window.scrollTo(0, 0);
     setCurrentPage(currentPage - 1);
 
     if ((currentPage - 1) % pageNumberLimit == 0) {

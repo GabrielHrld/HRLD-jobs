@@ -5,6 +5,7 @@ import CardsContainer from '../../components/Profile/Cards/CardsContainer';
 import Card from '../../components/Profile/Cards/Card';
 import PrincipalCard from '../../components/Profile/Cards/PrincipalCard';
 import PageTitle from '../../components/PageTitle';
+import NumberFormat from 'react-number-format';
 
 const Profile = () => {
   return (
@@ -46,6 +47,7 @@ const Profile = () => {
                 primary="true"
                 center="true"
                 id="contact-user-data"
+                edit
               >
                 <Content>
                   <CardSubtitle>Teléfono: </CardSubtitle>
@@ -62,35 +64,20 @@ const Profile = () => {
                   </CardContent>
                 </Content>
               </Card>
+              <Card title="Curriculum Vitae" id="resume">
+                <input type="file" />
+              </Card>
               <Card title="Preferencia Salarial" id="salary-expected">
                 <Content>
-                  <CardSubtitle>Teléfono: </CardSubtitle>
-                  <CardContent>11 4094 8366</CardContent>
-                </Content>
-                <Content>
-                  <CardSubtitle>Email: </CardSubtitle>
-                  <CardContent>email.example@email.com</CardContent>
-                </Content>
-                <Content>
-                  <CardSubtitle>Dirección: </CardSubtitle>
+                  <CardSubtitle>Salario pretendido: </CardSubtitle>
                   <CardContent>
-                    Calle Falsa 123, Springfield, Oregon, USA
-                  </CardContent>
-                </Content>
-              </Card>
-              <Card title="Preferencia Salarial">
-                <Content>
-                  <CardSubtitle>Teléfono: </CardSubtitle>
-                  <CardContent>11 4094 8366</CardContent>
-                </Content>
-                <Content>
-                  <CardSubtitle>Email: </CardSubtitle>
-                  <CardContent>email.example@email.com</CardContent>
-                </Content>
-                <Content>
-                  <CardSubtitle>Dirección: </CardSubtitle>
-                  <CardContent>
-                    Calle Falsa 123, Springfield, Oregon, USA
+                    <NumberFormat
+                      value={60000}
+                      displayType={'text'}
+                      thousandSeparator={true}
+                      prefix={'$'}
+                      suffix={'ARS'}
+                    />
                   </CardContent>
                 </Content>
               </Card>
@@ -121,25 +108,11 @@ const BoxContainer = styled.div`
   height: 400px;
   top: 80px;
 `;
-
-const PrincipalTitleContainer = styled.div`
-  padding: 2rem;
-  width: 100%;
-`;
-
-const PrincipalTitle = styled.h2`
-  font-size: clamp(1.3rem, 2.5vw, 2rem);
-  font-family: 'Hind Vadodara', sans-serif;
-  font-weight: 300;
-  padding-left: 2%;
-  border-left: 2px solid #32b7b6;
-  color: #222;
-`;
-
 const ContentContainer = styled.div`
   width: 100%;
   display: flex;
   position: relative;
+  padding-bottom: 5rem;
 `;
 
 const Content = styled.div`

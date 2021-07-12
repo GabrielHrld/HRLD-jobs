@@ -42,7 +42,7 @@ const Navbar = () => {
                   <NavLink to="/jobs">Empleos</NavLink>
                 </NavLinksItem>
                 <NavLinksItem>
-                  <NavLink to="/ ">Contacto</NavLink>
+                  <NavLink to="/about">Sobre nosotros</NavLink>
                 </NavLinksItem>
                 <NavLinksItem>
                   <NavLink to="/sign-in">Ingresar</NavLink>

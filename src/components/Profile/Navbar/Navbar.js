@@ -54,6 +54,15 @@ const Navbar = () => {
             <Li>Datos de contacto</Li>
           </Link>
           <Link
+            to="resume"
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            duration={400}
+          >
+            <Li>Curriculum Vitae</Li>
+          </Link>
+          <Link
             to="salary-expected"
             activeClass="active"
             spy={true}
@@ -61,15 +70,6 @@ const Navbar = () => {
             duration={400}
           >
             <Li>Prefencia salarial</Li>
-          </Link>
-          <Link
-            to="resume"
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            duration={400}
-          >
-            <Li>Datos de contacto</Li>
           </Link>
         </Ul>
       </NavbarContainer>
@@ -91,6 +91,9 @@ const NavbarContainer = styled.nav`
 
 const Ul = styled.ul`
   width: 100%;
+  & a {
+    cursor: pointer;
+  }
 `;
 
 const Li = styled.li`

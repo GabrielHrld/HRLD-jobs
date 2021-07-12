@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Card = ({ id, title, big, center, primary, children }) => {
+const Card = ({ id, title, big, center, primary, children, edit }) => {
   return (
     <CardWrapper id={id}>
       <CardContainer>
@@ -12,11 +12,13 @@ const Card = ({ id, title, big, center, primary, children }) => {
           <Title big={big} center={center} primary={primary}>
             {title}
           </Title>
-          <Link to="/candidatos/profile">
-            <IconContainer>
-              <Icon icon={faPencilAlt} />
-            </IconContainer>
-          </Link>
+          {edit && (
+            <Link to="/candidatos/profile">
+              <IconContainer>
+                <Icon icon={faPencilAlt} />
+              </IconContainer>
+            </Link>
+          )}
         </TitleContainer>
         <ContentContainer>{children}</ContentContainer>
       </CardContainer>
