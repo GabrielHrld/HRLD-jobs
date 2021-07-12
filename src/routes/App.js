@@ -7,9 +7,10 @@ import Home from '../Pages/Home';
 import Login from '../Pages/Login';
 import Jobs from '../Pages/Jobs';
 import Register from '../Pages/Register';
+import JobsDetails from '../Pages/JobsDetails';
+import About from '../Pages/About';
 
 import '../styles/app.scss';
-import JobsDetails from '../Pages/JobsDetails';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route exact path="/candidatos/profile" component={Profile} />
           <Route exact path="/jobs" component={Jobs} />
           <Route exact path="/jobs/details/:id" component={JobsDetails} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </Layout>
     </Router>

@@ -173,7 +173,7 @@ const JobCategory = styled.div`
     text-decoration: underline;
   }
   &:hover .icon {
-    opacity: 0.8;
+    /* opacity: 0.8; */
   }
   @media screen and (max-width: 768px) {
     padding-left: 0.4rem;

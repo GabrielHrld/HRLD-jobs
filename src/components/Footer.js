@@ -154,9 +154,6 @@ const Linkedin = styled(FaLinkedin)`
   transition: 0.3s color ease-out;
   font-size: 2rem;
   margin-right: 1rem;
-  &:hover {
-    color: #505050;
-  }
 `;
 
 const Github = styled(FaGithub)`
@@ -164,9 +161,6 @@ const Github = styled(FaGithub)`
   transition: 0.3s color ease-out;
   margin-right: 1rem;
   font-size: 2rem;
-  &:hover {
-    color: #505050;
-  }
 `;
 
 const Twitter = styled(FaTwitter)`
@@ -174,9 +168,6 @@ const Twitter = styled(FaTwitter)`
   transition: 0.3s color ease-out;
   margin-right: 1rem;
   font-size: 2rem;
-  &:hover {
-    color: #505050;
-  }
 `;
 
 export default Footer;
