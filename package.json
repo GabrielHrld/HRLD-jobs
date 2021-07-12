@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve",
     "build": "webpack --mode production",
+    "publish": "npm run build && git commit -am \"dist\" && git push origin master -f",
     "format": "prettier --write {*.js,src/**/*.{js,jsx}}",
     "lint": "eslint src/ --fix"
   },
